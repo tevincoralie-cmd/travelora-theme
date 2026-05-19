@@ -83,6 +83,10 @@
     },
     "travelora_promo_bwrc4B": {
       "type": "travelora-promo",
+      "custom_css": [
+        ".pb-left {max-width: 480px; }",
+        ".pb-box {min-width: 200px; }"
+      ],
       "name": "Travelora — Code promo",
       "settings": {
         "label": "Offre de bienvenue",
