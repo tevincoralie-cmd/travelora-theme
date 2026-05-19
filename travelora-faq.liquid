@@ -1,0 +1,64 @@
+{% comment %} travelora-faq.liquid {% endcomment %}
+<div class="tv-faq">
+  <div class="tv-faq__inner">
+    <div class="tv-faq__sidebar">
+      <span class="tv-section-eyebrow tv-reveal">{{ section.settings.eyebrow }}</span>
+      <h2 class="tv-section-title tv-reveal" style="margin-bottom:18px;">{{ section.settings.title }}</h2>
+      <p class="tv-faq__sidebar-desc">{{ section.settings.description }}</p>
+      <a href="{{ section.settings.contact_url }}" class="tv-faq__contact">{{ section.settings.contact_label }} →</a>
+    </div>
+    <div class="tv-faq__list">
+      {% for block in section.blocks %}
+        <div class="tv-faq__item {% if forloop.first %}open{% endif %}" {{ block.shopify_attributes }}>
+          <div class="tv-faq__q" onclick="tvFaq(this)">
+            {{ block.settings.question }}
+            <span class="tv-faq__icon">+</span>
+          </div>
+          <div class="tv-faq__a">{{ block.settings.answer }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+function tvFaq(el) {
+  const item = el.closest('.tv-faq__item');
+  const open = item.classList.contains('open');
+  document.querySelectorAll('.tv-faq__item').forEach(i => i.classList.remove('open'));
+  if (!open) item.classList.add('open');
+}
+</script>
+
+{% schema %}
+{
+  "name": "Travelora — FAQ",
+  "settings": [
+    { "type": "text",     "id": "eyebrow",       "label": "Eyebrow",         "default": "Questions fréquentes" },
+    { "type": "text",     "id": "title",         "label": "Titre",           "default": "Tout ce que vous souhaitez savoir" },
+    { "type": "textarea", "id": "description",   "label": "Description",     "default": "Une question sans réponse ? Notre équipe vous répond rapidement." },
+    { "type": "text",     "id": "contact_label", "label": "Texte lien contact", "default": "Nous contacter" },
+    { "type": "url",      "id": "contact_url",   "label": "URL contact" }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "Question",
+      "settings": [
+        { "type": "text",     "id": "question", "label": "Question" },
+        { "type": "textarea", "id": "answer",   "label": "Réponse" }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Travelora — FAQ",
+    "blocks": [
+      { "type": "faq_item", "settings": { "question": "Comment utiliser le code BIENVENUE ?", "answer": "Entrez le code BIENVENUE au moment du paiement pour bénéficier de −10% sur votre première commande. Valable une fois, sans minimum d'achat." } },
+      { "type": "faq_item", "settings": { "question": "Quel format d'image envoyer ?", "answer": "JPG ou PNG en haute résolution pour un rendu optimal. Notre outil de prévisualisation vous montre le résultat avant de valider." } },
+      { "type": "faq_item", "settings": { "question": "La housse s'adapte-t-elle à toutes les valises ?", "answer": "Oui. Notre tissu élastique s'adapte aux valises de toutes marques et tailles. Il suffit de sélectionner la bonne taille au moment de la commande." } },
+      { "type": "faq_item", "settings": { "question": "Comment entretenir ma housse ?", "answer": "Lavage délicat à 30°C. L'impression est résistante aux lavages — vos couleurs restent intactes voyage après voyage." } },
+      { "type": "faq_item", "settings": { "question": "Quels sont les délais de livraison ?", "answer": "Les délais sont calculés selon votre adresse lors de la commande. La livraison est offerte en France dès 40€ d'achat." } }
+    ]
+  }]
+}
+{% endschema %}

@@ -1,0 +1,59 @@
+{% comment %} travelora-testimonials.liquid {% endcomment %}
+<div class="tv-testi">
+  <div class="tv-testi__head">
+    <div>
+      <span class="tv-section-eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 class="tv-section-title">{{ section.settings.title }}</h2>
+    </div>
+    <div class="tv-reveal">
+      <div class="tv-testi__score">{{ section.settings.score }}</div>
+      <div class="tv-testi__stars">★★★★★</div>
+      <div class="tv-testi__label">Note moyenne</div>
+    </div>
+  </div>
+  <div class="tv-testi__grid">
+    {% for block in section.blocks %}
+      <div class="tv-testi__card tv-reveal" {{ block.shopify_attributes }}>
+        <div class="tv-testi__quote">"</div>
+        <p class="tv-testi__text">{{ block.settings.quote }}</p>
+        <div class="tv-testi__author">
+          <span class="tv-testi__dot"></span>
+          <div>
+            <div class="tv-testi__name">{{ block.settings.name }}</div>
+            <div class="tv-testi__loc">{{ block.settings.location }}</div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Travelora — Avis clients",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Avis clients" },
+    { "type": "text", "id": "title",   "label": "Titre",   "default": "Ils en parlent mieux que nous" },
+    { "type": "text", "id": "score",   "label": "Note",    "default": "4,8" }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Avis",
+      "settings": [
+        { "type": "textarea", "id": "quote",    "label": "Témoignage" },
+        { "type": "text",     "id": "name",     "label": "Nom du client" },
+        { "type": "text",     "id": "location", "label": "Ville · Date" }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Travelora — Avis clients",
+    "blocks": [
+      { "type": "review", "settings": { "quote": "Ma valise est reconnaissable en un regard sur le tapis. Plus jamais de confusion à l'aéroport — et j'ai reçu des compliments à chaque vol.", "name": "Sophie M.", "location": "Paris · Janvier 2026" } },
+      { "type": "review", "settings": { "quote": "J'ai mis une photo de mes enfants. C'est devenu un objet de famille, à la fois utile et chargé de sens. Rendu fidèle à la prévisualisation.", "name": "Alexandre D.", "location": "Lyon · Février 2026" } },
+      { "type": "review", "settings": { "quote": "Idée cadeau parfaite pour quelqu'un qui voyage beaucoup. L'outil est intuitif, le résultat propre. Je recommande sans hésitation.", "name": "Claire B.", "location": "Bordeaux · Mars 2026" } }
+    ]
+  }]
+}
+{% endschema %}

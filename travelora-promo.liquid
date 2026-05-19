@@ -1,0 +1,28 @@
+{% comment %} travelora-promo.liquid {% endcomment %}
+<div class="tv-promo">
+  <div class="tv-promo__left">
+    <p class="tv-promo__label">{{ section.settings.label }}</p>
+    <h2 class="tv-promo__title">{{ section.settings.title }}</h2>
+    <p class="tv-promo__desc">{{ section.settings.description }}</p>
+  </div>
+  <div class="tv-promo__box">
+    <p class="tv-promo__box-label">{{ section.settings.code_label }}</p>
+    <span class="tv-promo__code">{{ section.settings.code }}</span>
+    <p class="tv-promo__discount">{{ section.settings.discount }}</p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Travelora — Code promo",
+  "settings": [
+    { "type": "text",     "id": "label",       "label": "Eyebrow",      "default": "Offre de bienvenue" },
+    { "type": "text",     "id": "title",       "label": "Titre",        "default": "−10% sur votre première commande" },
+    { "type": "textarea", "id": "description", "label": "Description",  "default": "Entrez le code au moment du paiement. Valable une fois, sans minimum d'achat." },
+    { "type": "text",     "id": "code_label",  "label": "Label code",   "default": "Votre code" },
+    { "type": "text",     "id": "code",        "label": "Code promo",   "default": "BIENVENUE" },
+    { "type": "text",     "id": "discount",    "label": "Valeur",       "default": "−10% · Première commande" }
+  ],
+  "presets": [{ "name": "Travelora — Code promo" }]
+}
+{% endschema %}
