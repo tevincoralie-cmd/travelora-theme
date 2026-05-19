@@ -1,10 +1,199 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
-      "type": "main-404"
+      "type": "main-404",
+      "settings": {}
+    },
+    "travelora_hero_U3RUDb": {
+      "type": "travelora-hero",
+      "name": "Travelora — Hero",
+      "settings": {
+        "eyebrow": "Collection 2026",
+        "title_line1": "Voyagez",
+        "title_line2": "à votre image.",
+        "subtitle": "Une housse de valise entièrement personnalisée, qui vous ressemble et vous distingue au premier regard.",
+        "cta_label": "Créer la mienne",
+        "cta_url": "",
+        "cta2_label": "Voir les créations",
+        "cta2_url": "",
+        "price": "19,90 €",
+        "promo_code": "BIENVENUE"
+      }
+    },
+    "travelora_marquee_LN7c3T": {
+      "type": "travelora-marquee",
+      "name": "Travelora — Marquee",
+      "settings": {}
+    },
+    "travelora_trust_kxX6kM": {
+      "type": "travelora-trust",
+      "blocks": {
+        "item_JNmUKg": {
+          "type": "item",
+          "settings": {
+            "icon": "🚚",
+            "title": "Livraison offerte",
+            "subtitle": "Dès 40€ en France"
+          }
+        },
+        "item_UGQpXB": {
+          "type": "item",
+          "settings": {
+            "icon": "↩️",
+            "title": "Retours faciles",
+            "subtitle": "On s'occupe de tout"
+          }
+        },
+        "item_nBNqXa": {
+          "type": "item",
+          "settings": {
+            "icon": "🔒",
+            "title": "Paiement sécurisé",
+            "subtitle": "Shopify Payments"
+          }
+        },
+        "item_4AKnMk": {
+          "type": "item",
+          "settings": {
+            "icon": "💬",
+            "title": "SAV disponible",
+            "subtitle": "Réponse rapide"
+          }
+        }
+      },
+      "block_order": [
+        "item_JNmUKg",
+        "item_UGQpXB",
+        "item_nBNqXa",
+        "item_4AKnMk"
+      ],
+      "name": "Travelora — Réassurance",
+      "settings": {}
+    },
+    "travelora_promo_bwrc4B": {
+      "type": "travelora-promo",
+      "name": "Travelora — Code promo",
+      "settings": {
+        "label": "Offre de bienvenue",
+        "title": "−10% sur votre première commande",
+        "description": "Entrez le code au moment du paiement. Valable une fois, sans minimum d'achat.",
+        "code_label": "Votre code",
+        "code": "BIENVENUE",
+        "discount": "−10% · Première commande"
+      }
+    },
+    "travelora_faq_PethKH": {
+      "type": "travelora-faq",
+      "blocks": {
+        "faq_item_FB96fw": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Comment utiliser le code BIENVENUE ?",
+            "answer": "Entrez le code BIENVENUE au moment du paiement pour bénéficier de −10% sur votre première commande. Valable une fois, sans minimum d'achat."
+          }
+        },
+        "faq_item_3prBgV": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Quel format d'image envoyer ?",
+            "answer": "JPG ou PNG en haute résolution pour un rendu optimal. Notre outil de prévisualisation vous montre le résultat avant de valider."
+          }
+        },
+        "faq_item_HFrmMV": {
+          "type": "faq_item",
+          "settings": {
+            "question": "La housse s'adapte-t-elle à toutes les valises ?",
+            "answer": "Oui. Notre tissu élastique s'adapte aux valises de toutes marques et tailles. Il suffit de sélectionner la bonne taille au moment de la commande."
+          }
+        },
+        "faq_item_THVXKk": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Comment entretenir ma housse ?",
+            "answer": "Lavage délicat à 30°C. L'impression est résistante aux lavages — vos couleurs restent intactes voyage après voyage."
+          }
+        },
+        "faq_item_CQRnw6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Quels sont les délais de livraison ?",
+            "answer": "Les délais sont calculés selon votre adresse lors de la commande. La livraison est offerte en France dès 40€ d'achat."
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_FB96fw",
+        "faq_item_3prBgV",
+        "faq_item_HFrmMV",
+        "faq_item_THVXKk",
+        "faq_item_CQRnw6"
+      ],
+      "name": "Travelora — FAQ",
+      "settings": {
+        "eyebrow": "Questions fréquentes",
+        "title": "Tout ce que vous souhaitez savoir",
+        "description": "Une question sans réponse ? Notre équipe vous répond rapidement.",
+        "contact_label": "Nous contacter",
+        "contact_url": ""
+      }
+    },
+    "travelora_testimonials_RfMm4N": {
+      "type": "travelora-testimonials",
+      "blocks": {
+        "review_pQNhcf": {
+          "type": "review",
+          "settings": {
+            "quote": "Ma valise est reconnaissable en un regard sur le tapis. Plus jamais de confusion à l'aéroport — et j'ai reçu des compliments à chaque vol.",
+            "name": "Sophie M.",
+            "location": "Paris · Janvier 2026"
+          }
+        },
+        "review_ctbEVA": {
+          "type": "review",
+          "settings": {
+            "quote": "J'ai mis une photo de mes enfants. C'est devenu un objet de famille, à la fois utile et chargé de sens. Rendu fidèle à la prévisualisation.",
+            "name": "Alexandre D.",
+            "location": "Lyon · Février 2026"
+          }
+        },
+        "review_QX3CDg": {
+          "type": "review",
+          "settings": {
+            "quote": "Idée cadeau parfaite pour quelqu'un qui voyage beaucoup. L'outil est intuitif, le résultat propre. Je recommande sans hésitation.",
+            "name": "Claire B.",
+            "location": "Bordeaux · Mars 2026"
+          }
+        }
+      },
+      "block_order": [
+        "review_pQNhcf",
+        "review_ctbEVA",
+        "review_QX3CDg"
+      ],
+      "name": "Travelora — Avis clients",
+      "settings": {
+        "eyebrow": "Avis clients",
+        "title": "Ils en parlent mieux que nous",
+        "score": "4,8"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "travelora_hero_U3RUDb",
+    "travelora_marquee_LN7c3T",
+    "travelora_trust_kxX6kM",
+    "travelora_promo_bwrc4B",
+    "travelora_faq_PethKH",
+    "travelora_testimonials_RfMm4N"
   ]
 }
