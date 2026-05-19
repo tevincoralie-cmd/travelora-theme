@@ -1,102 +1,244 @@
 {
   "sections": {
-    "travelora-announce": {
-      "type": "travelora-announce",
-      "settings": {
-        "text_before": "Offre de bienvenue — code",
-        "code": "BIENVENUE",
-        "text_after": "pour −10% sur votre première commande ✈️"
-      }
-    },
-    "travelora-hero": {
-      "type": "travelora-hero",
-      "settings": {
-        "eyebrow": "Collection 2026",
-        "title_line1": "Voyagez",
-        "title_line2": "à votre image.",
-        "subtitle": "Une housse de valise entièrement personnalisée, qui vous ressemble et vous distingue au premier regard.",
-        "cta_label": "Créer la mienne",
-        "cta2_label": "Voir les créations",
-        "price": "19,90 €",
-        "promo_code": "BIENVENUE"
-      }
-    },
-    "travelora-marquee": {
-      "type": "travelora-marquee",
-      "settings": {}
-    },
-    "travelora-trust": {
-      "type": "travelora-trust",
-      "block_order": ["trust-1", "trust-2", "trust-3", "trust-4"],
+    "announcement-bar": {
+      "type": "announcement-bar",
       "blocks": {
-        "trust-1": { "type": "item", "settings": { "icon": "🚚", "title": "Livraison offerte",  "subtitle": "Dès 40€ en France" } },
-        "trust-2": { "type": "item", "settings": { "icon": "↩️", "title": "Retours faciles",    "subtitle": "On s'occupe de tout" } },
-        "trust-3": { "type": "item", "settings": { "icon": "🔒", "title": "Paiement sécurisé", "subtitle": "Shopify Payments" } },
-        "trust-4": { "type": "item", "settings": { "icon": "💬", "title": "SAV disponible",    "subtitle": "Réponse rapide" } }
-      }
-    },
-    "travelora-promo": {
-      "type": "travelora-promo",
-      "settings": {
-        "label": "Offre de bienvenue",
-        "title": "−10% sur votre première commande",
-        "description": "Entrez le code au moment du paiement. Valable une fois, sans minimum d'achat.",
-        "code_label": "Votre code",
-        "code": "BIENVENUE",
-        "discount": "−10% · Première commande"
-      }
-    },
-    "travelora-hiw": {
-      "type": "travelora-hiw",
-      "block_order": ["step-1", "step-2", "step-3", "step-4"],
-      "settings": {
-        "eyebrow": "Simple & rapide",
-        "title": "De la photo à la valise.",
-        "subtitle": "En quelques clics, votre design est prêt. Prévisualisation en direct, livraison soignée."
+        "announcement-bar-1": {
+          "type": "announcement",
+          "settings": {
+            "text": "Offre de bienvenue — code BIENVENUE pour −10% sur votre première commande ✈️",
+            "link": ""
+          }
+        }
       },
-      "blocks": {
-        "step-1": { "type": "step", "settings": { "icon": "📐", "title": "Choisissez la taille",  "description": "Cabine, moyen ou grand — notre housse s'adapte à toutes les valises." } },
-        "step-2": { "type": "step", "settings": { "icon": "📸", "title": "Importez votre image",  "description": "Photo, texte, motif — en JPG ou PNG pour un rendu haute définition." } },
-        "step-3": { "type": "step", "settings": { "icon": "✅", "title": "Prévisualisez",         "description": "Vérifiez le rendu final en temps réel avant de valider." } },
-        "step-4": { "type": "step", "settings": { "icon": "📦", "title": "Recevez & voyagez",     "description": "Livraison soignée jusqu'à votre porte. Prêt pour le prochain décollage." } }
-      }
-    },
-    "travelora-testimonials": {
-      "type": "travelora-testimonials",
-      "block_order": ["review-1", "review-2", "review-3"],
-      "settings": { "eyebrow": "Avis clients", "title": "Ils en parlent mieux que nous", "score": "4,8" },
-      "blocks": {
-        "review-1": { "type": "review", "settings": { "quote": "Ma valise est reconnaissable en un regard sur le tapis. Plus jamais de confusion à l'aéroport — et j'ai reçu des compliments à chaque vol.", "name": "Sophie M.", "location": "Paris · Janvier 2026" } },
-        "review-2": { "type": "review", "settings": { "quote": "J'ai mis une photo de mes enfants. C'est devenu un objet de famille, utile et chargé de sens. Rendu fidèle à la prévisualisation.", "name": "Alexandre D.", "location": "Lyon · Février 2026" } },
-        "review-3": { "type": "review", "settings": { "quote": "Idée cadeau parfaite. L'outil est intuitif, le résultat propre. Je recommande sans hésitation.", "name": "Claire B.", "location": "Bordeaux · Mars 2026" } }
-      }
-    },
-    "travelora-faq": {
-      "type": "travelora-faq",
-      "block_order": ["faq-1", "faq-2", "faq-3", "faq-4", "faq-5"],
+      "block_order": ["announcement-bar-1"],
       "settings": {
-        "eyebrow": "Questions fréquentes",
-        "title": "Tout ce que vous souhaitez savoir",
-        "description": "Une question sans réponse ? Notre équipe vous répond rapidement.",
-        "contact_label": "Nous contacter"
-      },
+        "color_scheme": "background-2"
+      }
+    },
+    "image-banner": {
+      "type": "image-banner",
+      "settings": {
+        "image_overlay_opacity": 20,
+        "image_height": "large",
+        "adapt_height_first_image": false,
+        "show_text_box": true,
+        "desktop_content_position": "middle-left",
+        "content_alignment": "left",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": true,
+        "show_text_below": true,
+        "heading": "Voyagez à votre image.",
+        "heading_size": "h0",
+        "subheading": "Une housse de valise entièrement personnalisée, qui vous ressemble et vous distingue au premier regard.",
+        "button_label": "Créer la mienne",
+        "button_link": "https://travelora.fr/products/housse-de-valise-personnalisee",
+        "button_label_2": "Voir les créations",
+        "button_link_2": ""
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
       "blocks": {
-        "faq-1": { "type": "faq_item", "settings": { "question": "Comment utiliser le code BIENVENUE ?", "answer": "Entrez le code BIENVENUE au moment du paiement pour bénéficier de −10% sur votre première commande. Valable une fois, sans minimum d'achat." } },
-        "faq-2": { "type": "faq_item", "settings": { "question": "Quel format d'image envoyer ?", "answer": "JPG ou PNG en haute résolution. Notre outil de prévisualisation vous montre le résultat avant de valider." } },
-        "faq-3": { "type": "faq_item", "settings": { "question": "La housse s'adapte-t-elle à toutes les valises ?", "answer": "Oui. Notre tissu élastique s'adapte aux valises de toutes marques et tailles." } },
-        "faq-4": { "type": "faq_item", "settings": { "question": "Comment entretenir ma housse ?", "answer": "Lavage délicat à 30°C. Vos couleurs restent intactes voyage après voyage." } },
-        "faq-5": { "type": "faq_item", "settings": { "question": "Quels sont les délais de livraison ?", "answer": "Les délais sont calculés selon votre adresse. Livraison offerte en France dès 40€." } }
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Offre de bienvenue",
+            "heading_size": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Utilisez le code <strong>BIENVENUE</strong> pour bénéficier de −10% sur votre première commande. Valable une fois, sans minimum d'achat.</p>"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Personnaliser ma housse",
+            "button_link_1": "https://travelora.fr/products/housse-de-valise-personnalisee",
+            "button_style_secondary_1": false
+          }
+        }
+      },
+      "block_order": ["heading", "text", "button"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Notre collection",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 3,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "products_to_show": 8,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn": {
+      "type": "multicolumn",
+      "blocks": {
+        "col1": {
+          "type": "column",
+          "settings": {
+            "title": "Choisissez la taille",
+            "text": "<p>Cabine, moyen ou grand — notre housse s'adapte à toutes les valises du marché.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "col2": {
+          "type": "column",
+          "settings": {
+            "title": "Importez votre image",
+            "text": "<p>Photo, texte, motif exclusif — en JPG ou PNG pour un rendu haute définition.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "col3": {
+          "type": "column",
+          "settings": {
+            "title": "Prévisualisez",
+            "text": "<p>Vérifiez le rendu final en temps réel avant de valider votre commande.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "col4": {
+          "type": "column",
+          "settings": {
+            "title": "Recevez & voyagez",
+            "text": "<p>Livraison soignée jusqu'à votre porte. Prêt pour le prochain décollage.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": ["col1", "col2", "col3", "col4"],
+      "settings": {
+        "title": "Comment ça marche ?",
+        "heading_size": "h2",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "testimonials": {
+      "type": "multicolumn",
+      "blocks": {
+        "t1": {
+          "type": "column",
+          "settings": {
+            "title": "Sophie M. — Paris",
+            "text": "<p>\"Ma valise est reconnaissable en un regard sur le tapis. Plus jamais de confusion à l'aéroport.\"</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "t2": {
+          "type": "column",
+          "settings": {
+            "title": "Alexandre D. — Lyon",
+            "text": "<p>\"J'ai mis une photo de mes enfants. C'est devenu un objet de famille, utile et chargé de sens.\"</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "t3": {
+          "type": "column",
+          "settings": {
+            "title": "Claire B. — Bordeaux",
+            "text": "<p>\"Idée cadeau parfaite. L'outil est intuitif, le résultat propre. Je recommande sans hésitation.\"</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": ["t1", "t2", "t3"],
+      "settings": {
+        "title": "Ils en parlent mieux que nous",
+        "heading_size": "h2",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "email-signup-banner": {
+      "type": "email-signup-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Inspirations & offres exclusives",
+            "heading_size": "h1"
+          }
+        },
+        "subheading": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Recevez nos nouveautés et bons plans en avant-première."
+          }
+        }
+      },
+      "block_order": ["heading", "subheading"],
+      "settings": {
+        "color_scheme": "background-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     }
   },
   "order": [
-    "travelora-announce",
-    "travelora-hero",
-    "travelora-marquee",
-    "travelora-trust",
-    "travelora-promo",
-    "travelora-hiw",
-    "travelora-testimonials",
-    "travelora-faq"
+    "announcement-bar",
+    "image-banner",
+    "rich-text",
+    "featured-collection",
+    "multicolumn",
+    "testimonials",
+    "email-signup-banner"
   ]
 }
