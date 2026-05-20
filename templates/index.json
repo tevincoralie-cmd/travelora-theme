@@ -8,6 +8,240 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {},
-  "order": []
+  "sections": {
+    "travelora-hero": {
+      "type": "travelora-hero",
+      "settings": {
+        "eyebrow": "Collection 2026",
+        "title_line1": "Voyagez",
+        "title_line2": "à votre image.",
+        "subtitle": "Une housse de valise entièrement personnalisée, qui vous ressemble et vous distingue au premier regard.",
+        "cta_label": "Créer la mienne",
+        "cta_url": "/products/housse-de-valise-personnalisee",
+        "cta2_label": "Voir les créations",
+        "price": "19,90 €",
+        "promo_code": "BIENVENUE"
+      }
+    },
+    "travelora-marquee": {
+      "type": "travelora-marquee",
+      "settings": {}
+    },
+    "travelora-trust": {
+      "type": "travelora-trust",
+      "blocks": {
+        "trust-1": {
+          "type": "item",
+          "settings": {
+            "icon_type": "livraison",
+            "title": "Livraison offerte",
+            "subtitle": "Dès 40€ en France"
+          }
+        },
+        "trust-2": {
+          "type": "item",
+          "settings": {
+            "icon_type": "retour",
+            "title": "Retours faciles",
+            "subtitle": "On s'occupe de tout"
+          }
+        },
+        "trust-3": {
+          "type": "item",
+          "settings": {
+            "icon_type": "securite",
+            "title": "Paiement sécurisé",
+            "subtitle": "Shopify Payments"
+          }
+        },
+        "trust-4": {
+          "type": "item",
+          "settings": {
+            "icon_type": "sav",
+            "title": "SAV disponible",
+            "subtitle": "Réponse sous 48h"
+          }
+        }
+      },
+      "block_order": [
+        "trust-1",
+        "trust-2",
+        "trust-3",
+        "trust-4"
+      ],
+      "settings": {}
+    },
+    "travelora-promo": {
+      "type": "travelora-promo",
+      "settings": {
+        "label": "Offre de bienvenue",
+        "title": "−10% sur votre première commande",
+        "description": "Entrez le code au moment du paiement. Valable une fois, sans minimum d'achat.",
+        "code_label": "Votre code",
+        "code": "BIENVENUE",
+        "discount": "−10% · Première commande"
+      }
+    },
+    "travelora-hiw": {
+      "type": "travelora-hiw",
+      "blocks": {
+        "step-1": {
+          "type": "step",
+          "settings": {
+            "icon": "📐",
+            "title": "Choisissez la taille",
+            "description": "Cabine, moyen ou grand."
+          }
+        },
+        "step-2": {
+          "type": "step",
+          "settings": {
+            "icon": "📸",
+            "title": "Importez votre image",
+            "description": "Photo en JPG ou PNG."
+          }
+        },
+        "step-3": {
+          "type": "step",
+          "settings": {
+            "icon": "✅",
+            "title": "Prévisualisez",
+            "description": "Vérifiez avant de valider."
+          }
+        },
+        "step-4": {
+          "type": "step",
+          "settings": {
+            "icon": "📦",
+            "title": "Recevez et voyagez",
+            "description": "Livraison soignée à domicile."
+          }
+        }
+      },
+      "block_order": [
+        "step-1",
+        "step-2",
+        "step-3",
+        "step-4"
+      ],
+      "settings": {
+        "eyebrow": "Simple et rapide",
+        "title": "De la photo à la valise.",
+        "subtitle": "En quelques clics, votre design est prêt."
+      }
+    },
+    "travelora-testimonials": {
+      "type": "travelora-testimonials",
+      "blocks": {
+        "review-1": {
+          "type": "review",
+          "settings": {
+            "quote": "Ma valise est reconnaissable en un regard sur le tapis. Plus jamais de confusion à l'aéroport.",
+            "name": "Sophie M.",
+            "location": "Paris · Janvier 2026"
+          }
+        },
+        "review-2": {
+          "type": "review",
+          "settings": {
+            "quote": "J'ai mis une photo de mes enfants. Rendu fidèle à la prévisualisation.",
+            "name": "Alexandre D.",
+            "location": "Lyon · Février 2026"
+          }
+        },
+        "review-3": {
+          "type": "review",
+          "settings": {
+            "quote": "Idée cadeau parfaite. L'outil est intuitif, le résultat propre.",
+            "name": "Claire B.",
+            "location": "Bordeaux · Mars 2026"
+          }
+        }
+      },
+      "block_order": [
+        "review-1",
+        "review-2",
+        "review-3"
+      ],
+      "settings": {
+        "eyebrow": "Avis clients",
+        "title": "Ils en parlent mieux que nous",
+        "score": "4,8"
+      }
+    },
+    "travelora-faq": {
+      "type": "travelora-faq",
+      "blocks": {
+        "faq-1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Comment utiliser le code BIENVENUE ?",
+            "answer": "Entrez le code BIENVENUE au moment du paiement pour bénéficier de -10% sur votre première commande."
+          }
+        },
+        "faq-2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Quel format d'image envoyer ?",
+            "answer": "JPG ou PNG en haute résolution pour un rendu optimal."
+          }
+        },
+        "faq-3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "La housse s'adapte-t-elle à toutes les valises ?",
+            "answer": "Oui. Notre tissu élastique s'adapte aux valises de toutes marques et tailles."
+          }
+        },
+        "faq-4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Comment entretenir ma housse ?",
+            "answer": "Lavage délicat à 30°C. Vos couleurs restent intactes voyage après voyage."
+          }
+        },
+        "faq-5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Quels sont les délais de livraison ?",
+            "answer": "Les délais sont calculés selon votre adresse. Livraison offerte en France dès 40€."
+          }
+        }
+      },
+      "block_order": [
+        "faq-1",
+        "faq-2",
+        "faq-3",
+        "faq-4",
+        "faq-5"
+      ],
+      "settings": {
+        "eyebrow": "Questions fréquentes",
+        "title": "Tout ce que vous souhaitez savoir",
+        "description": "Une question sans réponse ? Notre équipe vous répond rapidement.",
+        "contact_label": "Nous contacter"
+      }
+    },
+    "travelora-newsletter": {
+      "type": "travelora-newsletter",
+      "settings": {
+        "eyebrow": "Restez informé",
+        "title": "Inspirations et offres exclusives",
+        "description": "Recevez nos nouveautés et bons plans en avant-première.",
+        "placeholder": "Votre adresse e-mail",
+        "button_label": "S'inscrire",
+        "consent": "En vous inscrivant, vous acceptez de recevoir nos communications."
+      }
+    }
+  },
+  "order": [
+    "travelora-hero",
+    "travelora-marquee",
+    "travelora-trust",
+    "travelora-promo",
+    "travelora-hiw",
+    "travelora-testimonials",
+    "travelora-faq",
+    "travelora-newsletter"
+  ]
 }
