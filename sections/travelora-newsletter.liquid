@@ -1,0 +1,27 @@
+<section class="tv-nl">
+  <div class="tv-nl__inner">
+    <div>
+      <span class="tv-eyebrow tv-nl__eyebrow tv-reveal">{{ section.settings.eyebrow }}</span>
+      <h2 class="tv-nl__title tv-reveal">{{ section.settings.title }}</h2>
+      <p class="tv-nl__desc">{{ section.settings.description }}</p>
+    </div>
+    <div class="tv-reveal tv-d1">
+      <div class="tv-nl__form">
+        <input type="email" class="tv-nl__input" placeholder="{{ section.settings.placeholder }}">
+        <button class="tv-nl__btn">{{ section.settings.button_label }} →</button>
+      </div>
+      <p class="tv-nl__consent">{{ section.settings.consent }}</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Travelora — Newsletter", "settings": [
+  { "type": "text",     "id": "eyebrow",       "label": "Eyebrow",      "default": "Restez informé" },
+  { "type": "text",     "id": "title",         "label": "Titre",        "default": "Inspirations & offres exclusives" },
+  { "type": "textarea", "id": "description",   "label": "Description",  "default": "Recevez nos nouveautés et bons plans en avant-première." },
+  { "type": "text",     "id": "placeholder",   "label": "Placeholder",  "default": "Votre adresse e-mail" },
+  { "type": "text",     "id": "button_label",  "label": "Bouton",       "default": "S'inscrire" },
+  { "type": "text",     "id": "consent",       "label": "Consentement", "default": "En vous inscrivant, vous acceptez de recevoir nos communications. Désabonnement à tout moment." }
+], "presets": [{ "name": "Travelora — Newsletter" }] }
+{% endschema %}

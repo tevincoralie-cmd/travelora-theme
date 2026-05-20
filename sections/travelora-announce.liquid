@@ -1,18 +1,13 @@
-{% comment %} travelora-announce.liquid {% endcomment %}
+{% comment %}=== travelora-announce.liquid ==={% endcomment %}
 <div class="tv-announce">
   {{ section.settings.text_before }}
-  <span class="tv-announce__code">{{ section.settings.code }}</span>
+  <b>{{ section.settings.code }}</b>
   {{ section.settings.text_after }}
 </div>
-
 {% schema %}
-{
-  "name": "Travelora — Barre annonce",
-  "settings": [
-    { "type": "text", "id": "text_before", "label": "Texte avant le code", "default": "Offre de bienvenue — code" },
-    { "type": "text", "id": "code",        "label": "Code promo",          "default": "BIENVENUE" },
-    { "type": "text", "id": "text_after",  "label": "Texte après le code", "default": "pour −10% sur votre première commande ✈️" }
-  ],
-  "presets": [{ "name": "Travelora — Barre annonce" }]
-}
+{ "name": "Travelora — Annonce", "settings": [
+  { "type": "text", "id": "text_before", "label": "Texte avant", "default": "Offre de bienvenue — code" },
+  { "type": "text", "id": "code",        "label": "Code",        "default": "BIENVENUE" },
+  { "type": "text", "id": "text_after",  "label": "Texte après", "default": "pour −10% sur votre première commande ✈️" }
+], "presets": [{ "name": "Travelora — Annonce" }] }
 {% endschema %}

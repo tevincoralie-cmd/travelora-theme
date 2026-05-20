@@ -1,8 +1,7 @@
-{% comment %} travelora-hiw.liquid {% endcomment %}
-<div class="tv-hiw">
+<section class="tv-hiw">
   <div class="tv-hiw__head tv-reveal">
     <div>
-      <span class="tv-section-eyebrow tv-hiw__eyebrow">{{ section.settings.eyebrow }}</span>
+      <span class="tv-eyebrow tv-hiw__eyebrow">{{ section.settings.eyebrow }}</span>
       <h2 class="tv-hiw__title">{{ section.settings.title }}</h2>
     </div>
     <p class="tv-hiw__sub">{{ section.settings.subtitle }}</p>
@@ -11,41 +10,28 @@
     {% for block in section.blocks %}
       <div class="tv-hiw__step tv-reveal" {{ block.shopify_attributes }}>
         <p class="tv-hiw__step-n">0{{ forloop.index }}</p>
-        <div style="font-size:26px;margin-bottom:16px;">{{ block.settings.icon }}</div>
+        <div class="tv-hiw__step-icon">{{ block.settings.icon }}</div>
         <h4 class="tv-hiw__step-title">{{ block.settings.title }}</h4>
         <p class="tv-hiw__step-desc">{{ block.settings.description }}</p>
       </div>
     {% endfor %}
   </div>
-</div>
+</section>
 
 {% schema %}
-{
-  "name": "Travelora — Comment ça marche",
-  "settings": [
-    { "type": "text",     "id": "eyebrow",  "label": "Eyebrow",    "default": "Simple & rapide" },
-    { "type": "text",     "id": "title",    "label": "Titre",      "default": "De la photo à la valise." },
-    { "type": "textarea", "id": "subtitle", "label": "Sous-titre", "default": "En quelques clics, votre design est prêt. Prévisualisation en direct, livraison soignée." }
-  ],
-  "blocks": [
-    {
-      "type": "step",
-      "name": "Étape",
-      "settings": [
-        { "type": "text",     "id": "icon",        "label": "Emoji",    "default": "📐" },
-        { "type": "text",     "id": "title",       "label": "Titre",    "default": "Choisissez la taille" },
-        { "type": "textarea", "id": "description", "label": "Texte",    "default": "Cabine, moyen ou grand — notre housse s'adapte à toutes les valises." }
-      ]
-    }
-  ],
-  "presets": [{
-    "name": "Travelora — Comment ça marche",
-    "blocks": [
-      { "type": "step", "settings": { "icon": "📐", "title": "Choisissez la taille",     "description": "Cabine, moyen ou grand — notre housse s'adapte à toutes les valises du marché." } },
-      { "type": "step", "settings": { "icon": "📸", "title": "Importez votre image",     "description": "Photo, texte, motif exclusif — en JPG ou PNG pour un rendu haute définition." } },
-      { "type": "step", "settings": { "icon": "✅", "title": "Prévisualisez",            "description": "Vérifiez le rendu final en temps réel avant de valider votre commande." } },
-      { "type": "step", "settings": { "icon": "📦", "title": "Recevez & voyagez",        "description": "Livraison soignée jusqu'à votre porte. Prêt pour le prochain décollage." } }
-    ]
-  }]
-}
+{ "name": "Travelora — Comment ça marche", "settings": [
+  { "type": "text",     "id": "eyebrow",  "label": "Eyebrow",    "default": "Simple & rapide" },
+  { "type": "text",     "id": "title",    "label": "Titre",      "default": "De la photo à la valise." },
+  { "type": "textarea", "id": "subtitle", "label": "Sous-titre", "default": "En quelques clics, votre design est prêt. Prévisualisation en direct, livraison soignée." }
+], "blocks": [{ "type": "step", "name": "Étape", "settings": [
+  { "type": "text",     "id": "icon",        "label": "Emoji",    "default": "📐" },
+  { "type": "text",     "id": "title",       "label": "Titre",    "default": "Choisissez la taille" },
+  { "type": "textarea", "id": "description", "label": "Texte",    "default": "Cabine, moyen ou grand." }
+]}],
+"presets": [{ "name": "Travelora — Comment ça marche", "blocks": [
+  { "type": "step", "settings": { "icon": "📐", "title": "Choisissez la taille",  "description": "Cabine, moyen ou grand — notre housse s'adapte à toutes les valises." } },
+  { "type": "step", "settings": { "icon": "📸", "title": "Importez votre image",  "description": "Photo, texte, motif — en JPG ou PNG pour un rendu haute définition." } },
+  { "type": "step", "settings": { "icon": "✅", "title": "Prévisualisez",         "description": "Vérifiez le rendu final en temps réel avant de valider." } },
+  { "type": "step", "settings": { "icon": "📦", "title": "Recevez & voyagez",     "description": "Livraison soignée jusqu'à votre porte. Prêt pour le prochain décollage." } }
+]}] }
 {% endschema %}

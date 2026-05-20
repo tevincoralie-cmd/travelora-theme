@@ -1,8 +1,3 @@
-{% comment %}
-  Travelora — Section Hero
-  À placer dans : sections/travelora-hero.liquid
-{% endcomment %}
-
 <div class="tv-hero">
   <div class="tv-hero__left">
     <span class="tv-hero__eyebrow">{{ section.settings.eyebrow }}</span>
@@ -12,50 +7,35 @@
     </h1>
     <p class="tv-hero__sub">{{ section.settings.subtitle }}</p>
     <div class="tv-hero__actions">
-      <a href="{{ section.settings.cta_url }}" class="tv-btn-primary">
-        {{ section.settings.cta_label }}
-      </a>
-      <a href="{{ section.settings.cta2_url }}" class="tv-btn-text">
-        {{ section.settings.cta2_label }} →
-      </a>
+      <a href="{{ section.settings.cta_url }}" class="tv-btn-primary">{{ section.settings.cta_label }}</a>
+      <a href="#inspiration" class="tv-btn-text">{{ section.settings.cta2_label }} →</a>
     </div>
-    <div class="tv-hero__price-row">
+    <div class="tv-hero__price">
       <span class="tv-hero__price-label">À partir de</span>
       <span class="tv-hero__price-amount">{{ section.settings.price }}</span>
-      <span class="tv-hero__promo-badge">{{ section.settings.promo_code }} −10%</span>
+      <span class="tv-hero__promo">{{ section.settings.promo_code }} −10%</span>
     </div>
   </div>
-
   <div class="tv-hero__right">
     {% if section.settings.hero_image %}
-      <img
-        src="{{ section.settings.hero_image | image_url: width: 1200 }}"
-        alt="{{ section.settings.hero_image.alt | default: 'Travelora' }}"
-        width="{{ section.settings.hero_image.width }}"
-        height="{{ section.settings.hero_image.height }}"
-        loading="eager"
-      >
+      <img src="{{ section.settings.hero_image | image_url: width: 1200 }}"
+        alt="{{ section.settings.hero_image.alt | default: 'Travelora' }}" loading="eager">
     {% endif %}
-    <span class="tv-hero__right-label">{{ section.settings.eyebrow }}</span>
+    <span style="position:absolute;bottom:48px;right:-36px;font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:200;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.45);writing-mode:vertical-rl;transform:rotate(180deg);">Personnalisation sur mesure</span>
   </div>
 </div>
 
 {% schema %}
-{
-  "name": "Travelora — Hero",
-  "settings": [
-    { "type": "text",       "id": "eyebrow",      "label": "Texte eyebrow",   "default": "Collection 2026" },
-    { "type": "text",       "id": "title_line1",  "label": "Titre ligne 1",   "default": "Voyagez" },
-    { "type": "text",       "id": "title_line2",  "label": "Titre ligne 2 (italique sauge)", "default": "à votre image." },
-    { "type": "textarea",   "id": "subtitle",     "label": "Sous-titre",      "default": "Une housse de valise entièrement personnalisée, qui vous ressemble et vous distingue au premier regard." },
-    { "type": "text",       "id": "cta_label",    "label": "Bouton principal", "default": "Créer la mienne" },
-    { "type": "url",        "id": "cta_url",      "label": "Lien bouton principal" },
-    { "type": "text",       "id": "cta2_label",   "label": "Lien secondaire", "default": "Voir les créations" },
-    { "type": "url",        "id": "cta2_url",     "label": "Lien secondaire URL" },
-    { "type": "text",       "id": "price",        "label": "Prix affiché",    "default": "19,90 €" },
-    { "type": "text",       "id": "promo_code",   "label": "Code promo",      "default": "BIENVENUE" },
-    { "type": "image_picker", "id": "hero_image", "label": "Image hero (droite)" }
-  ],
-  "presets": [{ "name": "Travelora — Hero" }]
-}
+{ "name": "Travelora — Hero", "settings": [
+  { "type": "text",         "id": "eyebrow",     "label": "Eyebrow",       "default": "Collection 2026" },
+  { "type": "text",         "id": "title_line1", "label": "Titre ligne 1", "default": "Voyagez" },
+  { "type": "text",         "id": "title_line2", "label": "Titre ligne 2", "default": "à votre image." },
+  { "type": "textarea",     "id": "subtitle",    "label": "Sous-titre",    "default": "Une housse de valise entièrement personnalisée, qui vous ressemble et vous distingue au premier regard." },
+  { "type": "text",         "id": "cta_label",   "label": "Bouton 1",      "default": "Créer la mienne" },
+  { "type": "url",          "id": "cta_url",     "label": "Lien bouton 1" },
+  { "type": "text",         "id": "cta2_label",  "label": "Bouton 2",      "default": "Voir les créations" },
+  { "type": "text",         "id": "price",       "label": "Prix",          "default": "19,90 €" },
+  { "type": "text",         "id": "promo_code",  "label": "Code promo",    "default": "BIENVENUE" },
+  { "type": "image_picker", "id": "hero_image",  "label": "Image hero" }
+], "presets": [{ "name": "Travelora — Hero" }] }
 {% endschema %}

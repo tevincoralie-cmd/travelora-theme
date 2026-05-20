@@ -1,8 +1,17 @@
-{% comment %} travelora-trust.liquid {% endcomment %}
 <div class="tv-trust">
   {% for block in section.blocks %}
     <div class="tv-trust__item" {{ block.shopify_attributes }}>
-      <div class="tv-trust__icon">{{ block.settings.icon }}</div>
+      <div class="tv-trust__icon">
+        {% if block.settings.icon_type == 'livraison' %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        {% elsif block.settings.icon_type == 'retour' %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+        {% elsif block.settings.icon_type == 'securite' %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        {% else %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        {% endif %}
+      </div>
       <div class="tv-trust__title">{{ block.settings.title }}</div>
       <div class="tv-trust__sub">{{ block.settings.subtitle }}</div>
     </div>
@@ -10,27 +19,22 @@
 </div>
 
 {% schema %}
-{
-  "name": "Travelora — Réassurance",
-  "blocks": [
-    {
-      "type": "item",
-      "name": "Élément",
-      "settings": [
-        { "type": "text", "id": "icon",     "label": "Emoji / Icône", "default": "🚚" },
-        { "type": "text", "id": "title",    "label": "Titre",         "default": "Livraison offerte" },
-        { "type": "text", "id": "subtitle", "label": "Sous-titre",    "default": "Dès 40€ en France" }
-      ]
-    }
-  ],
-  "presets": [{
-    "name": "Travelora — Réassurance",
-    "blocks": [
-      { "type": "item", "settings": { "icon": "🚚", "title": "Livraison offerte",  "subtitle": "Dès 40€ en France" } },
-      { "type": "item", "settings": { "icon": "↩️", "title": "Retours faciles",    "subtitle": "On s'occupe de tout" } },
-      { "type": "item", "settings": { "icon": "🔒", "title": "Paiement sécurisé", "subtitle": "Shopify Payments" } },
-      { "type": "item", "settings": { "icon": "💬", "title": "SAV disponible",    "subtitle": "Réponse rapide" } }
-    ]
-  }]
+{ "name": "Travelora — Réassurance",
+  "blocks": [{ "type": "item", "name": "Élément", "settings": [
+    { "type": "select", "id": "icon_type", "label": "Icône", "options": [
+      { "value": "livraison", "label": "Livraison" },
+      { "value": "retour",    "label": "Retour" },
+      { "value": "securite",  "label": "Sécurité" },
+      { "value": "sav",       "label": "SAV" }
+    ], "default": "sav" },
+    { "type": "text", "id": "title",    "label": "Titre",      "default": "SAV disponible" },
+    { "type": "text", "id": "subtitle", "label": "Sous-titre", "default": "Réponse sous 48h" }
+  ]}],
+  "presets": [{ "name": "Travelora — Réassurance", "blocks": [
+    { "type": "item", "settings": { "icon_type": "livraison", "title": "Livraison offerte",  "subtitle": "Dès 40€ en France" } },
+    { "type": "item", "settings": { "icon_type": "retour",    "title": "Retours faciles",    "subtitle": "On s'occupe de tout" } },
+    { "type": "item", "settings": { "icon_type": "securite",  "title": "Paiement sécurisé", "subtitle": "Shopify Payments" } },
+    { "type": "item", "settings": { "icon_type": "sav",       "title": "SAV disponible",    "subtitle": "Réponse sous 48h" } }
+  ]}]
 }
 {% endschema %}
