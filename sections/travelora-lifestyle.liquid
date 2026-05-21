@@ -1,0 +1,139 @@
+<section id="inspiration" class="tv-lifestyle">
+  <div class="tv-lifestyle__inner">
+    <div class="tv-lifestyle__head">
+      <div>
+        <span class="tv-lifestyle__eyebrow">{{ section.settings.eyebrow }}</span>
+        <h2 class="tv-lifestyle__title">{{ section.settings.title }}</h2>
+      </div>
+      <a href="{{ section.settings.cta_url }}" class="tv-lifestyle__cta">{{ section.settings.cta_label }} →</a>
+    </div>
+    <div class="tv-lifestyle__grid">
+      {% for block in section.blocks %}
+        <div class="tv-lifestyle__card" {{ block.shopify_attributes }}>
+          <img src="{{ block.settings.image_url }}" alt="{{ block.settings.label }}" loading="lazy">
+          <div class="tv-lifestyle__overlay">
+            <span class="tv-lifestyle__label">{{ block.settings.label }}</span>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .tv-lifestyle {
+    background: #EDE8DE;
+    padding: 88px 72px;
+  }
+  @media (max-width: 768px) { .tv-lifestyle { padding: 56px 24px; } }
+
+  .tv-lifestyle__inner {}
+
+  .tv-lifestyle__head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 44px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .tv-lifestyle__eyebrow {
+    display: block;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10px; font-weight: 200;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: #5C7A6B; margin-bottom: 16px;
+  }
+
+  .tv-lifestyle__title {
+    font-family: 'Bodoni Moda', Georgia, serif;
+    font-size: clamp(30px, 4vw, 50px);
+    font-style: italic; font-weight: 400;
+    line-height: 1.1; color: #2C2925;
+  }
+
+  .tv-lifestyle__cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10.5px; font-weight: 200;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: #B5A99A;
+    border-bottom: 1px solid #DDD6C6; padding-bottom: 3px;
+    transition: color 0.3s, border-color 0.3s;
+    white-space: nowrap;
+  }
+  .tv-lifestyle__cta:hover { color: #5C7A6B; border-color: #5C7A6B; }
+
+  .tv-lifestyle__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  @media (max-width: 768px) {
+    .tv-lifestyle__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .tv-lifestyle__card {
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    aspect-ratio: 3/4;
+  }
+
+  .tv-lifestyle__card img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+    filter: saturate(0.88);
+    transition: transform 0.7s, filter 0.5s;
+  }
+  .tv-lifestyle__card:hover img {
+    transform: scale(1.05);
+    filter: saturate(1);
+  }
+
+  .tv-lifestyle__overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(44,41,37,0.55) 0%, transparent 60%);
+    display: flex; align-items: flex-end; padding: 16px;
+    opacity: 0; transition: opacity 0.35s;
+  }
+  .tv-lifestyle__card:hover .tv-lifestyle__overlay { opacity: 1; }
+
+  .tv-lifestyle__label {
+    background: rgba(253,252,249,0.92);
+    border-radius: 1px; padding: 6px 14px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10.5px; font-weight: 300;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: #2C2925;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Travelora - Galerie",
+  "settings": [
+    { "type": "text", "id": "eyebrow",   "label": "Eyebrow",        "default": "La communaute" },
+    { "type": "text", "id": "title",     "label": "Titre",          "default": "Laissez-vous inspirer" },
+    { "type": "text", "id": "cta_label", "label": "Lien texte",     "default": "Creer la mienne" },
+    { "type": "url",  "id": "cta_url",   "label": "Lien URL" }
+  ],
+  "blocks": [{
+    "type": "photo",
+    "name": "Photo",
+    "settings": [
+      { "type": "text", "id": "image_url", "label": "URL de l'image" },
+      { "type": "text", "id": "label",     "label": "Legende",        "default": "Creation" }
+    ]
+  }],
+  "presets": [{ "name": "Travelora - Galerie", "blocks": [
+    { "type": "photo", "settings": { "image_url": "https://cdn.shopify.com/s/files/1/1035/0336/4427/files/IMG_5573.jpg?v=1779384411", "label": "Style voyage" } },
+    { "type": "photo", "settings": { "image_url": "https://cdn.shopify.com/s/files/1/1035/0336/4427/files/IMG_5575.jpg?v=1779384411", "label": "Edition parisienne" } },
+    { "type": "photo", "settings": { "image_url": "https://cdn.shopify.com/s/files/1/1035/0336/4427/files/IMG_5574.jpg?v=1779384411", "label": "Esprit aventure" } },
+    { "type": "photo", "settings": { "image_url": "https://cdn.shopify.com/s/files/1/1035/0336/4427/files/IMG_5572.jpg?v=1779384410", "label": "Edition unique" } }
+  ]}]
+}
+{% endschema %}
