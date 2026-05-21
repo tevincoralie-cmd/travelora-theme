@@ -11,6 +11,10 @@
   "sections": {
     "travelora-hero": {
       "type": "travelora-hero",
+      "custom_css": [
+        ".tv-hero__right img {object-position: center top;}",
+        ".tv-hero__right {max-height: 600px;}"
+      ],
       "settings": {
         "eyebrow": "Collection 2026",
         "title_line1": "Voyagez",
