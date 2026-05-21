@@ -1,37 +1,128 @@
+
 <section class="tv-hiw">
-  <div class="tv-hiw__head tv-reveal">
-    <div>
-      <span class="tv-eyebrow tv-hiw__eyebrow">{{ section.settings.eyebrow }}</span>
-      <h2 class="tv-hiw__title">{{ section.settings.title }}</h2>
-    </div>
-    <p class="tv-hiw__sub">{{ section.settings.subtitle }}</p>
-  </div>
-  <div class="tv-hiw__steps">
-    {% for block in section.blocks %}
-      <div class="tv-hiw__step tv-reveal" {{ block.shopify_attributes }}>
-        <p class="tv-hiw__step-n">0{{ forloop.index }}</p>
-        <div class="tv-hiw__step-icon">{{ block.settings.icon }}</div>
-        <h4 class="tv-hiw__step-title">{{ block.settings.title }}</h4>
-        <p class="tv-hiw__step-desc">{{ block.settings.description }}</p>
+  <div class="tv-hiw__inner">
+    <div class="tv-hiw__head">
+      <div>
+        <span class="tv-hiw__eyebrow">{{ section.settings.eyebrow }}</span>
+        <h2 class="tv-hiw__title">{{ section.settings.title }}</h2>
       </div>
-    {% endfor %}
+      <p class="tv-hiw__sub">{{ section.settings.subtitle }}</p>
+    </div>
+    <div class="tv-hiw__steps">
+      {% for block in section.blocks %}
+        <div class="tv-hiw__step" {{ block.shopify_attributes }}>
+          <p class="tv-hiw__step-n">0{{ forloop.index }}</p>
+          <div class="tv-hiw__step-icon">{{ block.settings.icon }}</div>
+          <h4 class="tv-hiw__step-title">{{ block.settings.title }}</h4>
+          <p class="tv-hiw__step-desc">{{ block.settings.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </section>
 
+<style>
+  .tv-hiw {
+    background: #2C2925;
+    padding: 88px 72px;
+  }
+  @media (max-width: 768px) { .tv-hiw { padding: 56px 24px; } }
+
+  .tv-hiw__inner {}
+
+  .tv-hiw__head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: end;
+    margin-bottom: 64px;
+  }
+  @media (max-width: 768px) {
+    .tv-hiw__head { grid-template-columns: 1fr; gap: 20px; margin-bottom: 44px; }
+  }
+
+  .tv-hiw__eyebrow {
+    display: block;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10px; font-weight: 200;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: #A8C4B5; margin-bottom: 16px;
+  }
+
+  .tv-hiw__title {
+    font-family: 'Bodoni Moda', Georgia, serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-style: italic; font-weight: 300;
+    color: #FDFCF9; line-height: 1.1;
+  }
+
+  .tv-hiw__sub {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px; font-weight: 200;
+    color: rgba(245,241,234,0.4); line-height: 1.75;
+  }
+
+  .tv-hiw__steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.04);
+  }
+  @media (max-width: 768px) { .tv-hiw__steps { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .tv-hiw__steps { grid-template-columns: 1fr; } }
+
+  .tv-hiw__step {
+    background: #2C2925;
+    padding: 40px 28px;
+    transition: background 0.3s;
+  }
+  .tv-hiw__step:hover { background: #333028; }
+
+  .tv-hiw__step-n {
+    font-family: 'Bodoni Moda', Georgia, serif;
+    font-size: 11px; font-style: italic; font-weight: 300;
+    color: #7A9E8C; margin-bottom: 24px; letter-spacing: 0.04em;
+  }
+
+  .tv-hiw__step-icon {
+    font-size: 26px; margin-bottom: 16px;
+  }
+
+  .tv-hiw__step-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 13.5px; font-weight: 300;
+    color: #FDFCF9; margin-bottom: 10px; letter-spacing: 0.03em;
+  }
+
+  .tv-hiw__step-desc {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12.5px; font-weight: 200;
+    color: rgba(245,241,234,0.38); line-height: 1.7;
+  }
+</style>
+
 {% schema %}
-{ "name": "TV — Comment ca marche", "settings": [
-  { "type": "text",     "id": "eyebrow",  "label": "Eyebrow",    "default": "Simple & rapide" },
-  { "type": "text",     "id": "title",    "label": "Titre",      "default": "De la photo à la valise." },
-  { "type": "textarea", "id": "subtitle", "label": "Sous-titre", "default": "En quelques clics, votre design est prêt. Prévisualisation en direct, livraison soignée." }
-], "blocks": [{ "type": "step", "name": "Étape", "settings": [
-  { "type": "text",     "id": "icon",        "label": "Emoji",    "default": "📐" },
-  { "type": "text",     "id": "title",       "label": "Titre",    "default": "Choisissez la taille" },
-  { "type": "textarea", "id": "description", "label": "Texte",    "default": "Cabine, moyen ou grand." }
-]}],
-"presets": [{ "name": "Travelora — Comment ça marche", "blocks": [
-  { "type": "step", "settings": { "icon": "📐", "title": "Choisissez la taille",  "description": "Cabine, moyen ou grand — notre housse s'adapte à toutes les valises." } },
-  { "type": "step", "settings": { "icon": "📸", "title": "Importez votre image",  "description": "Photo, texte, motif — en JPG ou PNG pour un rendu haute définition." } },
-  { "type": "step", "settings": { "icon": "✅", "title": "Prévisualisez",         "description": "Vérifiez le rendu final en temps réel avant de valider." } },
-  { "type": "step", "settings": { "icon": "📦", "title": "Recevez & voyagez",     "description": "Livraison soignée jusqu'à votre porte. Prêt pour le prochain décollage." } }
-]}] }
+{
+  "name": "TV - Comment ca marche",
+  "settings": [
+    { "type": "text",     "id": "eyebrow",  "label": "Eyebrow",    "default": "Simple et rapide" },
+    { "type": "text",     "id": "title",    "label": "Titre",      "default": "De la photo a la valise." },
+    { "type": "textarea", "id": "subtitle", "label": "Sous-titre", "default": "En quelques clics, votre design est pret." }
+  ],
+  "blocks": [{
+    "type": "step",
+    "name": "Etape",
+    "settings": [
+      { "type": "text",     "id": "icon",        "label": "Emoji",  "default": "📐" },
+      { "type": "text",     "id": "title",       "label": "Titre",  "default": "Choisissez la taille" },
+      { "type": "textarea", "id": "description", "label": "Texte",  "default": "Cabine, moyen ou grand." }
+    ]
+  }],
+  "presets": [{ "name": "TV - Comment ca marche", "blocks": [
+    { "type": "step", "settings": { "icon": "📐", "title": "Choisissez la taille",  "description": "Cabine, moyen ou grand." } },
+    { "type": "step", "settings": { "icon": "📸", "title": "Importez votre image",  "description": "Photo en JPG ou PNG." } },
+    { "type": "step", "settings": { "icon": "✅", "title": "Previsualisez",         "description": "Verifiez avant de valider." } },
+    { "type": "step", "settings": { "icon": "📦", "title": "Recevez et voyagez",    "description": "Livraison soignee a domicile." } }
+  ]}]
+}
 {% endschema %}
