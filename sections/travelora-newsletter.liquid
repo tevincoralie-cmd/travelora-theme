@@ -1,11 +1,11 @@
 <section class="tv-nl">
   <div class="tv-nl__inner">
     <div>
-      <span class="tv-eyebrow tv-nl__eyebrow tv-reveal">{{ section.settings.eyebrow }}</span>
-      <h2 class="tv-nl__title tv-reveal">{{ section.settings.title }}</h2>
+      <span class="tv-nl__eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 class="tv-nl__title">{{ section.settings.title }}</h2>
       <p class="tv-nl__desc">{{ section.settings.description }}</p>
     </div>
-    <div class="tv-reveal tv-d1">
+    <div>
       <div class="tv-nl__form">
         <input type="email" class="tv-nl__input" placeholder="{{ section.settings.placeholder }}">
         <button class="tv-nl__btn">{{ section.settings.button_label }} →</button>
@@ -15,13 +15,88 @@
   </div>
 </section>
 
+<style>
+  .tv-nl {
+    background: #5C7A6B;
+    padding: 88px 72px;
+  }
+  @media (max-width: 768px) { .tv-nl { padding: 56px 24px; } }
+
+  .tv-nl__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  @media (max-width: 768px) {
+    .tv-nl__inner { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  .tv-nl__eyebrow {
+    display: block;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10px; font-weight: 200;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: #A8C4B5; margin-bottom: 16px;
+  }
+
+  .tv-nl__title {
+    font-family: 'Bodoni Moda', Georgia, serif;
+    font-size: clamp(26px, 3.5vw, 40px);
+    font-style: italic; font-weight: 300;
+    color: #FDFCF9; line-height: 1.15; margin-bottom: 12px;
+  }
+
+  .tv-nl__desc {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 13.5px; font-weight: 200;
+    color: rgba(235,243,238,0.55); line-height: 1.75;
+  }
+
+  .tv-nl__form {
+    display: flex;
+    background: rgba(255,255,255,0.09);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 2px; overflow: hidden; margin-bottom: 12px;
+  }
+
+  .tv-nl__input {
+    flex: 1; background: transparent; border: none; outline: none;
+    padding: 15px 18px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 13px; font-weight: 200; color: #FDFCF9; min-width: 0;
+  }
+  .tv-nl__input::placeholder { color: rgba(255,255,255,0.32); }
+
+  .tv-nl__btn {
+    background: #FDFCF9; color: #5C7A6B; border: none;
+    padding: 15px 22px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10px; font-weight: 300;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    cursor: pointer; white-space: nowrap;
+    transition: background 0.3s, color 0.3s;
+  }
+  .tv-nl__btn:hover { background: #2C2925; color: #FDFCF9; }
+
+  .tv-nl__consent {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10.5px; font-weight: 200;
+    color: rgba(235,243,238,0.3); line-height: 1.65;
+  }
+</style>
+
 {% schema %}
-{ "name": "Travelora — Newsletter", "settings": [
-  { "type": "text",     "id": "eyebrow",       "label": "Eyebrow",      "default": "Restez informé" },
-  { "type": "text",     "id": "title",         "label": "Titre",        "default": "Inspirations & offres exclusives" },
-  { "type": "textarea", "id": "description",   "label": "Description",  "default": "Recevez nos nouveautés et bons plans en avant-première." },
-  { "type": "text",     "id": "placeholder",   "label": "Placeholder",  "default": "Votre adresse e-mail" },
-  { "type": "text",     "id": "button_label",  "label": "Bouton",       "default": "S'inscrire" },
-  { "type": "text",     "id": "consent",       "label": "Consentement", "default": "En vous inscrivant, vous acceptez de recevoir nos communications. Désabonnement à tout moment." }
-], "presets": [{ "name": "Travelora — Newsletter" }] }
+{
+  "name": "Travelora - Newsletter",
+  "settings": [
+    { "type": "text",     "id": "eyebrow",      "label": "Eyebrow",      "default": "Restez informe" },
+    { "type": "text",     "id": "title",        "label": "Titre",        "default": "Inspirations et offres exclusives" },
+    { "type": "textarea", "id": "description",  "label": "Description",  "default": "Recevez nos nouveautes et bons plans en avant-premiere." },
+    { "type": "text",     "id": "placeholder",  "label": "Placeholder",  "default": "Votre adresse e-mail" },
+    { "type": "text",     "id": "button_label", "label": "Bouton",       "default": "S'inscrire" },
+    { "type": "text",     "id": "consent",      "label": "Consentement", "default": "En vous inscrivant, vous acceptez de recevoir nos communications." }
+  ],
+  "presets": [{ "name": "Travelora - Newsletter" }]
+}
 {% endschema %}
