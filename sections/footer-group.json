@@ -41,6 +41,7 @@
         "footer-1",
         "footer-2"
       ],
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "color_scheme": "scheme-1",

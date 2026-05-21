@@ -20,7 +20,8 @@
         "cta_url": "/products/housse-de-valise-personnalisee",
         "cta2_label": "Voir les créations",
         "price": "19,90 €",
-        "promo_code": "BIENVENUE"
+        "promo_code": "BIENVENUE",
+        "hero_image": "shopify://shop_images/E94420AD-C9C3-4A9A-86CE-0E2E590C9F10.png"
       }
     },
     "travelora-marquee": {
@@ -219,7 +220,8 @@
         "eyebrow": "Questions fréquentes",
         "title": "Tout ce que vous souhaitez savoir",
         "description": "Une question sans réponse ? Notre équipe vous répond rapidement.",
-        "contact_label": "Nous contacter"
+        "contact_label": "Nous contacter",
+        "contact_url": ""
       }
     },
     "travelora-newsletter": {
