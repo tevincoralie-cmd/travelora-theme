@@ -454,7 +454,7 @@ body {
 }
 
 /* ── HOW IT WORKS ── */
-.tv-hiw { background: var(--ink); padding: 88px 72px; }
+.tv-hiw { background: var(--ink); padding: 52px 72px; }
 @media (max-width: 768px) { .tv-hiw { padding: 56px 24px; } }
 
 .tv-hiw__head {

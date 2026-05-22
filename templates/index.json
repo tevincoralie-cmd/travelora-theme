@@ -87,6 +87,52 @@
         "discount": "−10% · Première commande"
       }
     },
+    "travelora_lifestyle_LXiYfr": {
+      "type": "travelora-lifestyle",
+      "blocks": {
+        "photo_LkTzif": {
+          "type": "photo",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/1035/0336/4427/files/IMG_5573.jpg?v=1779384411",
+            "label": "Style voyage"
+          }
+        },
+        "photo_gxJmKq": {
+          "type": "photo",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/1035/0336/4427/files/IMG_5575.jpg?v=1779384411",
+            "label": "Edition parisienne"
+          }
+        },
+        "photo_FeN7G9": {
+          "type": "photo",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/1035/0336/4427/files/IMG_5574.jpg?v=1779384411",
+            "label": "Esprit aventure"
+          }
+        },
+        "photo_zrmCVL": {
+          "type": "photo",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/1035/0336/4427/files/IMG_5572.jpg?v=1779384410",
+            "label": "Edition unique"
+          }
+        }
+      },
+      "block_order": [
+        "photo_LkTzif",
+        "photo_gxJmKq",
+        "photo_FeN7G9",
+        "photo_zrmCVL"
+      ],
+      "name": "Travelora - Galerie",
+      "settings": {
+        "eyebrow": "La communaute",
+        "title": "Laissez-vous inspirer",
+        "cta_label": "Creer la mienne",
+        "cta_url": ""
+      }
+    },
     "travelora-hiw": {
       "type": "travelora-hiw",
       "blocks": {
@@ -238,52 +284,6 @@
         "button_label": "S'inscrire",
         "consent": "En vous inscrivant, vous acceptez de recevoir nos communications."
       }
-    },
-    "travelora_lifestyle_LXiYfr": {
-      "type": "travelora-lifestyle",
-      "blocks": {
-        "photo_LkTzif": {
-          "type": "photo",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/1035/0336/4427/files/IMG_5573.jpg?v=1779384411",
-            "label": "Style voyage"
-          }
-        },
-        "photo_gxJmKq": {
-          "type": "photo",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/1035/0336/4427/files/IMG_5575.jpg?v=1779384411",
-            "label": "Edition parisienne"
-          }
-        },
-        "photo_FeN7G9": {
-          "type": "photo",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/1035/0336/4427/files/IMG_5574.jpg?v=1779384411",
-            "label": "Esprit aventure"
-          }
-        },
-        "photo_zrmCVL": {
-          "type": "photo",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/1035/0336/4427/files/IMG_5572.jpg?v=1779384410",
-            "label": "Edition unique"
-          }
-        }
-      },
-      "block_order": [
-        "photo_LkTzif",
-        "photo_gxJmKq",
-        "photo_FeN7G9",
-        "photo_zrmCVL"
-      ],
-      "name": "Travelora - Galerie",
-      "settings": {
-        "eyebrow": "La communaute",
-        "title": "Laissez-vous inspirer",
-        "cta_label": "Creer la mienne",
-        "cta_url": ""
-      }
     }
   },
   "order": [
@@ -291,9 +291,9 @@
     "travelora-marquee",
     "travelora-trust",
     "travelora-promo",
+    "travelora_lifestyle_LXiYfr",
     "travelora-hiw",
     "travelora-testimonials",
-    "travelora_lifestyle_LXiYfr",
     "travelora-faq",
     "travelora-newsletter"
   ]
