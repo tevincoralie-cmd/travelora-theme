@@ -6,24 +6,22 @@
     </div>
 
     <div class="tv-hiw__grid">
-
       {% for block in section.blocks %}
         <div class="tv-hiw__card tv-hiw__card--{{ forloop.index }}" {{ block.shopify_attributes }}>
           <div class="tv-hiw__img-wrap">
             <span class="tv-hiw__num">{{ forloop.index }}</span>
-            <div class="tv-hiw__emoji">{{ block.settings.icon }}</div>
+            <span class="tv-hiw__emoji">{{ block.settings.icon }}</span>
           </div>
           {% unless forloop.last %}<span class="tv-hiw__arrow">›</span>{% endunless %}
           <p class="tv-hiw__step-title">{{ block.settings.title }}</p>
           <p class="tv-hiw__step-desc">{{ block.settings.description }}</p>
         </div>
       {% endfor %}
-
     </div>
 
     <div class="tv-hiw__tip">
       <p class="tv-hiw__tip-text">
-        ✨ &nbsp; Code <strong>{{ section.settings.promo_code }}</strong> pour {{ section.settings.promo_discount }} sur votre première commande &nbsp;·&nbsp; {{ section.settings.delivery_text }}
+        ✨ &nbsp; Code <strong>{{ section.settings.promo_code }}</strong> pour {{ section.settings.promo_discount }} sur votre première commande &nbsp;·&nbsp; {{ section.settings.shipping_text }}
       </p>
     </div>
   </div>
@@ -40,6 +38,7 @@
     text-align: center;
     margin-bottom: 48px;
   }
+
   .tv-hiw__eyebrow {
     display: block;
     font-family: 'Josefin Sans', sans-serif;
@@ -47,6 +46,7 @@
     letter-spacing: 0.3em; text-transform: uppercase;
     color: #A8C4B5; margin-bottom: 12px;
   }
+
   .tv-hiw__title {
     font-family: 'Bodoni Moda', Georgia, serif;
     font-size: clamp(22px, 3vw, 32px);
@@ -59,17 +59,18 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
     position: relative;
-    margin-bottom: 36px;
+    margin-bottom: 32px;
   }
   @media (max-width: 640px) {
-    .tv-hiw__grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .tv-hiw__grid { grid-template-columns: repeat(2, 1fr); }
   }
 
   .tv-hiw__grid::before {
     content: '';
     position: absolute;
-    top: 48px;
-    left: 12.5%; right: 12.5%;
+    top: 47px;
+    left: 13%;
+    right: 13%;
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(92,122,107,0.35) 20%, rgba(92,122,107,0.35) 80%, transparent);
     z-index: 0;
@@ -85,25 +86,26 @@
   }
 
   .tv-hiw__img-wrap {
-    width: 96px; height: 96px;
+    width: 92px; height: 92px;
     border-radius: 50%;
-    border: 2px solid rgba(255,255,255,0.12);
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     position: relative;
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
-    transition: transform 0.3s, border-color 0.3s;
+    transition: transform 0.3s;
+    border: 2px solid rgba(255,255,255,0.15);
   }
-  .tv-hiw__img-wrap:hover { transform: scale(1.06); border-color: rgba(255,255,255,0.3); }
+  .tv-hiw__img-wrap:hover { transform: scale(1.07); }
 
-  .tv-hiw__card--1 .tv-hiw__img-wrap { background: linear-gradient(135deg, #D6E8DF, #A8C4B5); }
-  .tv-hiw__card--2 .tv-hiw__img-wrap { background: linear-gradient(135deg, #F5E6D3, #E8C9A0); }
-  .tv-hiw__card--3 .tv-hiw__img-wrap { background: linear-gradient(135deg, #D3E0F5, #A0B8E8); }
-  .tv-hiw__card--4 .tv-hiw__img-wrap { background: linear-gradient(135deg, #F5D3D3, #E8A0A0); }
+  .tv-hiw__card--1 .tv-hiw__img-wrap { background: linear-gradient(135deg, #4A9A72, #2E7A54); }
+  .tv-hiw__card--2 .tv-hiw__img-wrap { background: linear-gradient(135deg, #D4883A, #B86820); }
+  .tv-hiw__card--3 .tv-hiw__img-wrap { background: linear-gradient(135deg, #3A6FA0, #1E4F80); }
+  .tv-hiw__card--4 .tv-hiw__img-wrap { background: linear-gradient(135deg, #C05050, #A03030); }
 
   .tv-hiw__emoji {
-    font-size: 32px;
+    font-size: 30px;
     line-height: 1;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
   }
 
   .tv-hiw__num {
@@ -121,10 +123,12 @@
 
   .tv-hiw__arrow {
     position: absolute;
-    top: 38px; right: -10px;
+    top: 30px;
+    right: -10px;
     font-size: 18px;
     color: rgba(92,122,107,0.45);
     z-index: 2;
+    line-height: 1;
   }
   @media (max-width: 640px) { .tv-hiw__arrow { display: none; } }
 
@@ -132,9 +136,10 @@
     font-family: 'Josefin Sans', sans-serif;
     font-size: 10.5px; font-weight: 300;
     letter-spacing: 0.1em; text-transform: uppercase;
-    color: #FDFCF9; text-align: center;
-    margin-bottom: 6px; line-height: 1.5;
+    color: #FDFCF9; text-align: center; margin-bottom: 6px;
+    line-height: 1.5;
   }
+
   .tv-hiw__step-desc {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 10.5px; font-weight: 200;
@@ -149,14 +154,18 @@
     padding: 14px 24px;
     text-align: center;
   }
+
   .tv-hiw__tip-text {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 11px; font-weight: 200;
-    color: rgba(235,243,238,0.5);
+    color: rgba(235,243,238,0.45);
     letter-spacing: 0.06em;
+    line-height: 1.7;
   }
+
   .tv-hiw__tip-text strong {
-    font-weight: 300; color: #A8C4B5;
+    font-weight: 300;
+    color: #A8C4B5;
   }
 </style>
 
@@ -164,26 +173,26 @@
 {
   "name": "TV - Comment ca marche",
   "settings": [
-    { "type": "text", "id": "eyebrow",          "label": "Eyebrow",           "default": "Simple et rapide" },
-    { "type": "text", "id": "title",             "label": "Titre",             "default": "De la photo a la valise." },
-    { "type": "text", "id": "promo_code",        "label": "Code promo",        "default": "BIENVENUE" },
-    { "type": "text", "id": "promo_discount",    "label": "Remise",            "default": "-10%" },
-    { "type": "text", "id": "delivery_text",     "label": "Texte livraison",   "default": "Livraison offerte des 40 euros" }
+    { "type": "text", "id": "eyebrow",       "label": "Eyebrow",         "default": "Simple et rapide" },
+    { "type": "text", "id": "title",         "label": "Titre",           "default": "De la photo a la valise." },
+    { "type": "text", "id": "promo_code",    "label": "Code promo",      "default": "BIENVENUE" },
+    { "type": "text", "id": "promo_discount","label": "Remise",          "default": "-10%" },
+    { "type": "text", "id": "shipping_text", "label": "Texte livraison", "default": "Livraison offerte des 40 euros" }
   ],
   "blocks": [{
     "type": "step",
     "name": "Etape",
     "settings": [
-      { "type": "text",     "id": "icon",        "label": "Emoji",   "default": "📐" },
-      { "type": "text",     "id": "title",       "label": "Titre",   "default": "Choisissez la taille" },
-      { "type": "textarea", "id": "description", "label": "Texte",   "default": "S, M, L ou XL" }
+      { "type": "text",     "id": "icon",        "label": "Emoji",  "default": "📐" },
+      { "type": "text",     "id": "title",       "label": "Titre",  "default": "Choisissez la taille" },
+      { "type": "textarea", "id": "description", "label": "Texte",  "default": "S, M, L ou XL" }
     ]
   }],
   "presets": [{ "name": "TV - Comment ca marche", "blocks": [
-    { "type": "step", "settings": { "icon": "📐", "title": "Choisissez la taille",  "description": "S, M, L ou XL" } },
-    { "type": "step", "settings": { "icon": "📸", "title": "Importez votre photo",  "description": "JPG ou PNG" } },
-    { "type": "step", "settings": { "icon": "✅", "title": "Previsualisez en direct", "description": "Resultat en temps reel" } },
-    { "type": "step", "settings": { "icon": "📦", "title": "Recevez et voyagez",    "description": "Livraison soignee" } }
+    { "type": "step", "settings": { "icon": "📐", "title": "Choisissez la taille",  "description": "S, M, L ou XL - compatible toutes marques" } },
+    { "type": "step", "settings": { "icon": "📸", "title": "Importez votre photo",  "description": "JPG ou PNG haute resolution" } },
+    { "type": "step", "settings": { "icon": "✅", "title": "Previsualisez",         "description": "Resultat en temps reel" } },
+    { "type": "step", "settings": { "icon": "📦", "title": "Recevez et voyagez",    "description": "Livraison soignee a domicile" } }
   ]}]
 }
 {% endschema %}
