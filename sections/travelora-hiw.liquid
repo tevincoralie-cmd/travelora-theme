@@ -4,19 +4,27 @@
       <span class="tv-hiw__eyebrow">{{ section.settings.eyebrow }}</span>
       <h2 class="tv-hiw__title">{{ section.settings.title }}</h2>
     </div>
-    <div class="tv-hiw__timeline">
+
+    <div class="tv-hiw__grid">
+
       {% for block in section.blocks %}
-        <div class="tv-hiw__step" {{ block.shopify_attributes }}>
-          <div class="tv-hiw__bubble">
-            <span class="tv-hiw__icon">{{ block.settings.icon }}</span>
-            <span class="tv-hiw__num">0{{ forloop.index }}</span>
+        <div class="tv-hiw__card tv-hiw__card--{{ forloop.index }}" {{ block.shopify_attributes }}>
+          <div class="tv-hiw__img-wrap">
+            <span class="tv-hiw__num">{{ forloop.index }}</span>
+            <div class="tv-hiw__emoji">{{ block.settings.icon }}</div>
           </div>
-          {% unless forloop.last %}
-            <div class="tv-hiw__arrow">→</div>
-          {% endunless %}
-          <p class="tv-hiw__label">{{ block.settings.title }}</p>
+          {% unless forloop.last %}<span class="tv-hiw__arrow">›</span>{% endunless %}
+          <p class="tv-hiw__step-title">{{ block.settings.title }}</p>
+          <p class="tv-hiw__step-desc">{{ block.settings.description }}</p>
         </div>
       {% endfor %}
+
+    </div>
+
+    <div class="tv-hiw__tip">
+      <p class="tv-hiw__tip-text">
+        ✨ &nbsp; Code <strong>{{ section.settings.promo_code }}</strong> pour {{ section.settings.promo_discount }} sur votre première commande &nbsp;·&nbsp; {{ section.settings.delivery_text }}
+      </p>
     </div>
   </div>
 </section>
@@ -24,110 +32,131 @@
 <style>
   .tv-hiw {
     background: #2C2925;
-    padding: 48px 72px;
+    padding: 56px 72px 64px;
   }
-  @media (max-width: 768px) { .tv-hiw { padding: 36px 24px; } }
+  @media (max-width: 768px) { .tv-hiw { padding: 40px 24px 48px; } }
 
   .tv-hiw__header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
   }
-
   .tv-hiw__eyebrow {
     display: block;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 9px; font-weight: 200;
-    letter-spacing: 0.28em; text-transform: uppercase;
-    color: #A8C4B5; margin-bottom: 10px;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: #A8C4B5; margin-bottom: 12px;
   }
-
   .tv-hiw__title {
     font-family: 'Bodoni Moda', Georgia, serif;
-    font-size: clamp(20px, 3vw, 32px);
+    font-size: clamp(22px, 3vw, 32px);
     font-style: italic; font-weight: 300;
     color: #FDFCF9; line-height: 1.1;
   }
 
-  .tv-hiw__timeline {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 0;
-    flex-wrap: wrap;
+  .tv-hiw__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    position: relative;
+    margin-bottom: 36px;
+  }
+  @media (max-width: 640px) {
+    .tv-hiw__grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
   }
 
-  .tv-hiw__step {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0;
+  .tv-hiw__grid::before {
+    content: '';
+    position: absolute;
+    top: 48px;
+    left: 12.5%; right: 12.5%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(92,122,107,0.35) 20%, rgba(92,122,107,0.35) 80%, transparent);
+    z-index: 0;
   }
+  @media (max-width: 640px) { .tv-hiw__grid::before { display: none; } }
 
-  .tv-hiw__bubble {
+  .tv-hiw__card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    padding: 0 12px;
+    position: relative;
+    z-index: 1;
   }
 
-  .tv-hiw__icon {
-    width: 52px; height: 52px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(92,122,107,0.4);
+  .tv-hiw__img-wrap {
+    width: 96px; height: 96px;
     border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.12);
+    margin-bottom: 16px;
+    position: relative;
     display: flex; align-items: center; justify-content: center;
-    font-size: 20px;
-    transition: background 0.3s, border-color 0.3s;
+    flex-shrink: 0;
+    transition: transform 0.3s, border-color 0.3s;
   }
-  .tv-hiw__step:hover .tv-hiw__icon {
-    background: rgba(92,122,107,0.2);
-    border-color: #5C7A6B;
+  .tv-hiw__img-wrap:hover { transform: scale(1.06); border-color: rgba(255,255,255,0.3); }
+
+  .tv-hiw__card--1 .tv-hiw__img-wrap { background: linear-gradient(135deg, #D6E8DF, #A8C4B5); }
+  .tv-hiw__card--2 .tv-hiw__img-wrap { background: linear-gradient(135deg, #F5E6D3, #E8C9A0); }
+  .tv-hiw__card--3 .tv-hiw__img-wrap { background: linear-gradient(135deg, #D3E0F5, #A0B8E8); }
+  .tv-hiw__card--4 .tv-hiw__img-wrap { background: linear-gradient(135deg, #F5D3D3, #E8A0A0); }
+
+  .tv-hiw__emoji {
+    font-size: 32px;
+    line-height: 1;
   }
 
   .tv-hiw__num {
+    position: absolute;
+    top: 2px; right: 2px;
+    width: 22px; height: 22px;
+    background: #2C2925;
+    border-radius: 50%;
     font-family: 'Bodoni Moda', Georgia, serif;
     font-size: 10px; font-style: italic; font-weight: 300;
-    color: #5C7A6B; letter-spacing: 0.08em;
-  }
-
-  .tv-hiw__label {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 10px; font-weight: 200;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: rgba(245,241,234,0.5);
-    text-align: center;
-    margin-top: 8px;
-    max-width: 80px;
-    line-height: 1.5;
-    position: absolute;
-  }
-
-  .tv-hiw__step {
-    position: relative;
-    padding-bottom: 40px;
-  }
-
-  .tv-hiw__label {
-    position: absolute;
-    bottom: 0; left: 50%;
-    transform: translateX(-50%);
-    width: 90px;
+    color: #FDFCF9;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(255,255,255,0.15);
   }
 
   .tv-hiw__arrow {
+    position: absolute;
+    top: 38px; right: -10px;
     font-size: 18px;
-    color: rgba(92,122,107,0.4);
-    margin: 0 4px;
-    margin-bottom: 30px;
-    flex-shrink: 0;
+    color: rgba(92,122,107,0.45);
+    z-index: 2;
+  }
+  @media (max-width: 640px) { .tv-hiw__arrow { display: none; } }
+
+  .tv-hiw__step-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10.5px; font-weight: 300;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: #FDFCF9; text-align: center;
+    margin-bottom: 6px; line-height: 1.5;
+  }
+  .tv-hiw__step-desc {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10.5px; font-weight: 200;
+    color: rgba(245,241,234,0.35);
+    text-align: center; line-height: 1.6;
   }
 
-  @media (max-width: 480px) {
-    .tv-hiw__timeline { gap: 8px; }
-    .tv-hiw__bubble { padding: 0 6px; }
-    .tv-hiw__icon { width: 42px; height: 42px; font-size: 16px; }
-    .tv-hiw__arrow { font-size: 14px; }
+  .tv-hiw__tip {
+    background: rgba(92,122,107,0.12);
+    border: 1px solid rgba(92,122,107,0.25);
+    border-radius: 2px;
+    padding: 14px 24px;
+    text-align: center;
+  }
+  .tv-hiw__tip-text {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px; font-weight: 200;
+    color: rgba(235,243,238,0.5);
+    letter-spacing: 0.06em;
+  }
+  .tv-hiw__tip-text strong {
+    font-weight: 300; color: #A8C4B5;
   }
 </style>
 
@@ -135,22 +164,26 @@
 {
   "name": "TV - Comment ca marche",
   "settings": [
-    { "type": "text", "id": "eyebrow",  "label": "Eyebrow", "default": "Simple et rapide" },
-    { "type": "text", "id": "title",    "label": "Titre",   "default": "De la photo a la valise." }
+    { "type": "text", "id": "eyebrow",          "label": "Eyebrow",           "default": "Simple et rapide" },
+    { "type": "text", "id": "title",             "label": "Titre",             "default": "De la photo a la valise." },
+    { "type": "text", "id": "promo_code",        "label": "Code promo",        "default": "BIENVENUE" },
+    { "type": "text", "id": "promo_discount",    "label": "Remise",            "default": "-10%" },
+    { "type": "text", "id": "delivery_text",     "label": "Texte livraison",   "default": "Livraison offerte des 40 euros" }
   ],
   "blocks": [{
     "type": "step",
     "name": "Etape",
     "settings": [
-      { "type": "text", "id": "icon",  "label": "Emoji",  "default": "📐" },
-      { "type": "text", "id": "title", "label": "Titre",  "default": "Choisissez la taille" }
+      { "type": "text",     "id": "icon",        "label": "Emoji",   "default": "📐" },
+      { "type": "text",     "id": "title",       "label": "Titre",   "default": "Choisissez la taille" },
+      { "type": "textarea", "id": "description", "label": "Texte",   "default": "S, M, L ou XL" }
     ]
   }],
   "presets": [{ "name": "TV - Comment ca marche", "blocks": [
-    { "type": "step", "settings": { "icon": "📐", "title": "Choisissez la taille" } },
-    { "type": "step", "settings": { "icon": "📸", "title": "Importez votre image" } },
-    { "type": "step", "settings": { "icon": "✅", "title": "Previsualisez" } },
-    { "type": "step", "settings": { "icon": "📦", "title": "Recevez et voyagez" } }
+    { "type": "step", "settings": { "icon": "📐", "title": "Choisissez la taille",  "description": "S, M, L ou XL" } },
+    { "type": "step", "settings": { "icon": "📸", "title": "Importez votre photo",  "description": "JPG ou PNG" } },
+    { "type": "step", "settings": { "icon": "✅", "title": "Previsualisez en direct", "description": "Resultat en temps reel" } },
+    { "type": "step", "settings": { "icon": "📦", "title": "Recevez et voyagez",    "description": "Livraison soignee" } }
   ]}]
 }
 {% endschema %}
