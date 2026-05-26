@@ -178,7 +178,9 @@
       "settings": {
         "eyebrow": "Simple et rapide",
         "title": "De la photo à la valise.",
-        "subtitle": "En quelques clics, votre design est prêt."
+        "promo_code": "BIENVENUE",
+        "promo_discount": "-10%",
+        "shipping_text": "Livraison offerte des 40 euros"
       }
     },
     "travelora-testimonials": {
@@ -255,7 +257,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Quels sont les délais de livraison ?",
-            "answer": "Les délais sont calculés selon votre adresse. Livraison offerte en France dès 40€."
+            "answer": "Votre housse est fabriquée sur mesure après validation de votre commande. Comptez 6 à 10 jours ouvrés pour la fabrication et la livraison en France métropolitaine. Vous recevrez un email de suivi dès l'expédition.\nLivraison offerte en France dès 40€."
           }
         }
       },
