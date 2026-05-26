@@ -151,6 +151,11 @@
           "form_selector": "",
           "media_selector": ""
         }
+      },
+      "13319315114606262840": {
+        "type": "shopify://apps/mini-image-upload/blocks/app-embed/019a499d-2f45-732c-96ee-872049547d70",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
