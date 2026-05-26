@@ -61,6 +61,10 @@
           "settings": {
             "product": "{{product}}"
           }
+        },
+        "judge_me_reviews_preview_badge_8QdFP3": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
         }
       },
       "block_order": [
@@ -72,7 +76,8 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "mini_image_upload_app_block_pxgKK6"
+        "mini_image_upload_app_block_pxgKK6",
+        "judge_me_reviews_preview_badge_8QdFP3"
       ],
       "settings": {
         "enable_sticky_info": true,
