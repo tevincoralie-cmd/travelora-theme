@@ -137,23 +137,13 @@
     },
     "content_for_index": [],
     "blocks": {
-      "13791442132806306766": {
-        "type": "shopify://apps/customix-personalizer/blocks/app/d207e469-c2f9-4c9c-a8dc-25c6df211067",
-        "disabled": false,
-        "settings": {
-          "hide_preview": true,
-          "show_preview_by_default": true,
-          "hide_preview_design_btn": true,
-          "show_close_button": true,
-          "border_radius": 10,
-          "save_thumbnail": true,
-          "show_thumbnail": true,
-          "form_selector": "",
-          "media_selector": ""
-        }
-      },
       "13319315114606262840": {
         "type": "shopify://apps/mini-image-upload/blocks/app-embed/019a499d-2f45-732c-96ee-872049547d70",
+        "disabled": false,
+        "settings": {}
+      },
+      "14060646107696862457": {
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
         "settings": {}
       }
