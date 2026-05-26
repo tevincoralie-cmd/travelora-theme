@@ -183,45 +183,6 @@
         "shipping_text": "Livraison offerte des 40 euros"
       }
     },
-    "travelora-testimonials": {
-      "type": "travelora-testimonials",
-      "blocks": {
-        "review-1": {
-          "type": "review",
-          "settings": {
-            "quote": "Ma valise est reconnaissable en un regard sur le tapis. Plus jamais de confusion à l'aéroport.",
-            "name": "Sophie M.",
-            "location": "Paris · Janvier 2026"
-          }
-        },
-        "review-2": {
-          "type": "review",
-          "settings": {
-            "quote": "J'ai mis une photo de mes enfants. Rendu fidèle à la prévisualisation.",
-            "name": "Alexandre D.",
-            "location": "Lyon · Février 2026"
-          }
-        },
-        "review-3": {
-          "type": "review",
-          "settings": {
-            "quote": "Idée cadeau parfaite. L'outil est intuitif, le résultat propre.",
-            "name": "Claire B.",
-            "location": "Bordeaux · Mars 2026"
-          }
-        }
-      },
-      "block_order": [
-        "review-1",
-        "review-2",
-        "review-3"
-      ],
-      "settings": {
-        "eyebrow": "Avis clients",
-        "title": "Ils en parlent mieux que nous",
-        "score": "4,8"
-      }
-    },
     "travelora-faq": {
       "type": "travelora-faq",
       "blocks": {
@@ -295,7 +256,6 @@
     "travelora-promo",
     "travelora_lifestyle_LXiYfr",
     "travelora-hiw",
-    "travelora-testimonials",
     "travelora-faq",
     "travelora-newsletter"
   ]
