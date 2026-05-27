@@ -172,6 +172,7 @@ body {
 .tv-hero__right {
   position: relative; overflow: hidden;
   background: var(--sage-pale);
+  height: 100%
 }
 @media (max-width: 768px) { .tv-hero__right { aspect-ratio: 3/3,75; } }
 .tv-hero__right img {
