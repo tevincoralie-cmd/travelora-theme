@@ -88,7 +88,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 72px 64px;
+  padding: 40px 64px;
   position: relative;
   overflow: hidden;
 }
