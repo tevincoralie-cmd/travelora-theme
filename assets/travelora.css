@@ -100,7 +100,7 @@ body {
   letter-spacing: 0.26em;
   text-transform: uppercase;
   color: var(--sage);
-  margin-bottom: 8px;
+  margin-bottom: 2px;
   display: flex;
   align-items: center;
   gap: 14px;
