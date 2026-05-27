@@ -77,7 +77,7 @@ body {
 .tv-hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 92vh;align-items: center;
+  min-height: 92vh;align-items: stretch;
 }
 @media (max-width: 768px) {
   .tv-hero { grid-template-columns: 1fr; min-height: auto; }
