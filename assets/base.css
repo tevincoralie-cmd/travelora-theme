@@ -3595,3 +3595,20 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+/* Travelora — bouton panier visible */
+.product-form__submit,
+button[name="add"] {
+  background-color: #1a1a2e !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.product-form__submit:hover,
+button[name="add"]:hover {
+  background-color: #E8593C !important;
+  cursor: pointer !important;
+}
