@@ -3612,10 +3612,14 @@ button[name="add"]:hover {
   background-color: #E8593C !important;
   cursor: pointer !important;
 }
-/* Travelora — réduire image hero page accueil */
-.banner__media,
-.banner img,
-.hero__media img {
-  max-height: 500px !important;
+/* Travelora — réduire hauteur hero */
+.tv-hero {
+  max-height: 600px !important;
+  overflow: hidden !important;
+}
+
+.tv-hero__right img {
+  max-height: 600px !important;
+  width: 100% !important;
   object-fit: cover !important;
 }
