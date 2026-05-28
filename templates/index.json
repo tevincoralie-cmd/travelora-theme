@@ -13,7 +13,7 @@
       "type": "travelora-hero",
       "custom_css": [
         ".tv-hero__right img {object-position: center top;}",
-        ".tv-hero__right {max-height: 60vh;}"
+        ".tv-hero__right {max-height: 40vh;}"
       ],
       "settings": {
         "eyebrow": "Collection 2026",
