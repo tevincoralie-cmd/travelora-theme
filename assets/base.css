@@ -3614,7 +3614,7 @@ button[name="add"]:hover {
 }
 /* Travelora — réduire image hero */
 .tv-hero__right img {
-  max-width: 80% !important;
+  max-width: 90% !important;
   height: auto !important;
   object-fit: contain !important;
   margin: 0 auto !important;
