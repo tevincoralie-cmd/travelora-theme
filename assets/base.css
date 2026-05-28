@@ -3613,13 +3613,10 @@ button[name="add"]:hover {
   cursor: pointer !important;
 }
 /* Travelora — réduire image hero */
-.tv-hero__right {
-  max-width: 45% !important;
-}
-
 .tv-hero__right img {
-  width: 100% !important;
+  max-width: 87% !important;
   height: auto !important;
   object-fit: contain !important;
+  margin: 0 auto !important;
   display: block !important;
 }
